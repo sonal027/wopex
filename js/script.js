@@ -1,5 +1,5 @@
 // ================= LOAD NAVBAR COMPONENT =================
-fetch("/components/navbar.html")
+fetch("../components/navbar.html")
     .then((res) => {
         if (!res.ok) throw new Error("Navbar failed to load");
         return res.text();
