@@ -1,15 +1,3 @@
-// ================= LOAD NAVBAR COMPONENT =================
-fetch("../components/navbar.html")
-    .then((res) => {
-        if (!res.ok) throw new Error("Navbar failed to load");
-        return res.text();
-    })
-    .then((html) => {
-        const navbar = document.getElementById("navbar");
-        if (navbar) navbar.innerHTML = html;
-    })
-    .catch((err) => console.error(err));
-
 
 // year code 
 document.getElementById("year").textContent = new Date().getFullYear();
