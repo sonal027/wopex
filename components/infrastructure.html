@@ -3,55 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Gallery</title>
+    <title>Infrastructure</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      /* Smooth hover zoom */
-      .gallery-img {
-        transition: transform 0.35s ease;
-      }
-      .gallery-img:hover {
-        transform: scale(1.1);
-      }
-    </style>
+    <script src="../js/script.js" defer></script>
   </head>
 
   <body class="bg-gray-100">
-    <!-- Gallery Section -->
-    <section class="px-6 py-12">
-      <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">
-        Image Gallery
+     <div id="navbar"></div>
+    <!-- Infrastructure Section -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">
+        Infrastructure
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Image Block -->
-
-        <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-          <img
-            src="../img/infra.jpeg"
-            class="w-full h-full rounded-xl hover:scale-105 transition"
-          />
-          <img
-            src="img/gallery2.jpg"
-            class="w-full rounded-xl hover:scale-105 transition"
-          />
-          <img
-            src="img/gallery3.jpg"
-            class="w-full rounded-xl hover:scale-105 transition"
-          />
-          <img
-            src="img/gallery4.jpg"
-            class="w-full rounded-xl hover:scale-105 transition"
-          />
-          <img
-            src="img/gallery5.jpg"
-            class="w-full rounded-xl hover:scale-105 transition"
-          />
-        </div>
-      </div>
+      <!-- Grid -->
+      <div
+        id="infraGallery"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+      ></div>
     </section>
+
+    <!-- JS to load images dynamically -->
+    <script>
+      const infraImages = [
+        "../img/infra.jpeg",
+        "../img/infra1.jpeg",
+        "../img/infra2.jpeg",
+        "../img/infra3.jpeg",
+        "../img/infra4.jpeg",
+        "../img/infra5.jpeg",
+        "../img/infra6.jpeg",
+        "../img/inspec2.png",
+        "../img/inspec3.png",
+        "../img/supplier1.jpg",
+        "../img/transport.jpg",
+        "../img/lasercutting.jpeg",
+      ];
+
+      const gallery = document.getElementById("infraGallery");
+
+      infraImages.forEach((src) => {
+        const card = document.createElement("div");
+        card.className =
+          "rounded-lg shadow-md  hover:shadow-lg transition overflow-hidden";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Infrastructure Image";
+        img.className =
+          "w-full h-64 md:h-72 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110";
+
+        card.appendChild(img);
+        gallery.appendChild(card);
+      });
+    </script>
   </body>
 </html>
