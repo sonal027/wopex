@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Smooth hover zoom */
+      .gallery-img {
+        transition: transform 0.35s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Gallery Section -->
+    <section class="px-6 py-12">
+      <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">
+        Image Gallery
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Image Block -->
+
+        <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+          <img
+            src="../img/infra.jpeg"
+            class="w-full h-full rounded-xl hover:scale-105 transition"
+          />
+          <img
+            src="img/gallery2.jpg"
+            class="w-full rounded-xl hover:scale-105 transition"
+          />
+          <img
+            src="img/gallery3.jpg"
+            class="w-full rounded-xl hover:scale-105 transition"
+          />
+          <img
+            src="img/gallery4.jpg"
+            class="w-full rounded-xl hover:scale-105 transition"
+          />
+          <img
+            src="img/gallery5.jpg"
+            class="w-full rounded-xl hover:scale-105 transition"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
