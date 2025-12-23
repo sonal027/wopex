@@ -718,8 +718,8 @@
             </p>
 
             <form
+              id="contactForm"
               class="mt-6 space-y-4"
-              onsubmit="event.preventDefault(); alert('Demo: form submitted')"
             >
               <div class="grid sm:grid-cols-2 gap-4">
                 <input
@@ -777,7 +777,8 @@
               <div class="flex items-center gap-3">
                 <button
                   type="submit"
-                  class="inline-flex items-center gap-2 rounded-md bg-[#CD000D] text-[#fff] px-6 py-3 text-sm font-medium"
+                  id="submitBtn"
+                  class="inline-flex items-center gap-2 rounded-md bg-[#CD000D] text-[#fff] px-6 py-3 text-sm font-medium hover:bg-red-700 transition disabled:opacity-50"
                 >
                   Send enquiry
                 </button>
@@ -787,6 +788,7 @@
                   >Or email info@wopex.in</a
                 >
               </div>
+              <div id="formMessage" class="text-sm text-slate-300 hidden"></div>
             </form>
           </div>
 

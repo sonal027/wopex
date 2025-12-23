@@ -261,3 +261,52 @@ function animate() {
     requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+
+// ================= GOOGLE SHEETS FORM INTEGRATION =================
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
+
+// REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbrhhOsj9ir-krgaVhr89r8_rL2HkasakdSwY0aSsxe0uB55OnDtlebGe_34lrJAIz4A/exec";
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formMessage.classList.add('hidden');
+        
+        const formData = {
+            name: contactForm.name.value,
+            company: contactForm.company.value,
+            email: contactForm.email.value,
+            phone: contactForm.phone.value,
+            industry: contactForm.industry.value,
+            brief: contactForm.brief.value
+        };
+        
+        try {
+            const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                mode: 'no-cors'
+            });
+            
+            formMessage.textContent = '✓ Thank you! Your enquiry has been sent. We will contact you soon.';
+            formMessage.classList.remove('hidden');
+            formMessage.style.color = '#86efac';
+            contactForm.reset();
+            
+        } catch (error) {
+            console.error('Error:', error);
+            formMessage.textContent = '✗ Error sending form. Please try emailing info@wopex.in';
+            formMessage.classList.remove('hidden');
+            formMessage.style.color = '#f87171';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send enquiry';
+        }
+    });
+}
