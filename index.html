@@ -82,14 +82,14 @@
 
             <div class="mt-8 flex flex-wrap gap-4 items-center">
               <a
-                href="#contact"
+                href="/components/certification.html"
                 class="inline-flex items-center gap-3 rounded-lg bg-[#CD000D] text-[#fff] px-5 py-3 font-semibold shadow-xl transform hover:-translate-y-0.5 transition hover:bg-red-600 hover:shadow-red-500/20 shadow-sm"
-                >Request a quote</a
+                >View Certificates</a
               >
               <a
-                href="#projects"
+                href="/components/products.html"
                 class="inline-flex items-center gap-3 rounded-lg border border-white/20 text-white/90 px-5 py-3 hover:bg-white/5 transition"
-                >View projects</a
+                >View Products</a
               >
             </div>
           </div>
@@ -102,9 +102,15 @@
                   class="slide absolute inset-0 opacity-100 transition-opacity duration-700"
                 >
                   <img
-                    src="img/weilding.jpg"
+                    src="img/wielder.png"
                     class="w-full h-full object-cover"
                   />
+                </div>
+
+                <div
+                  class="slide absolute inset-0 opacity-0 transition-opacity duration-700"
+                >
+                  <img src="img/rail.jpg" class="w-full h-full object-cover" />
                 </div>
 
                 <div
@@ -114,12 +120,6 @@
                     src="img/transport.jpg"
                     class="w-full h-full object-cover"
                   />
-                </div>
-
-                <div
-                  class="slide absolute inset-0 opacity-0 transition-opacity duration-700"
-                >
-                  <img src="img/rail.jpg" class="w-full h-full object-cover" />
                 </div>
 
                 <div
@@ -210,7 +210,7 @@
           class="absolute inset-4 md:inset-8 bg-blue-900 rounded-lg opacity-70 -z-10"
         ></div>
         <img
-          src="img/groupImg.png"
+          src="img/teamImg.jpeg"
           alt="Welders"
           class="rounded-lg shadow-xl w-full h-96 object-cover border-4 border-white"
         />
@@ -242,7 +242,7 @@
           <img
             src="img/pillarDrill.png"
             alt="Pillar Drill Machine"
-            class="w-full h-full object-cover"
+            class="w-full h-auto object-cover"
           />
           <div
             class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent px-4 py-3"
@@ -475,11 +475,12 @@
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-3xl font-bold">Our Products</h2>
 
-        <button
+        <a
+          href="/components/products.html"
           class="px-5 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold shadow hover:bg-gray-300 transition"
         >
-          More →
-        </button>
+          More →</a
+        >
       </div>
 
       <!-- Product Grid -->
@@ -646,17 +647,17 @@
           <h3 class="text-sm font-semibold text-gray-500 tracking-wide mb-2">
             CERTIFICATION
           </h3>
-
           <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            ISO 9001:2015 – Quality Management System Certification
+            EN 15085-2 CL2 Certification
           </h2>
 
           <p class="text-gray-600 leading-relaxed mb-6">
-            Wopex Manufacturing India Pvt. Ltd. is proudly certified under the
-            ISO 9001:2015 Quality Management System by M/S OSS Certification
-            Services Pvt. Ltd. This certification demonstrates our commitment to
-            delivering high-quality fabricated parts, maintaining consistent
-            processes, and meeting global quality standards.
+            WOPEX Manufacturing India Pvt. Ltd. is officially certified by TÜV
+            Rheinland Industrie Service GmbH for the welding of railway vehicles
+            and components, in accordance with the European standard EN
+            15085-2:2020 + A1:2023, Classification Level CL2. This certification
+            confirms that WOPEX fulfills stringent European requirements for
+            quality, safety, and traceability in railway welding activities.
           </p>
 
           <p class="text-gray-800 leading-relaxed mb-2 font-semibold">
@@ -665,22 +666,26 @@
 
           <ul class="mb-4">
             <li>Certified Organization: Wopex Manufacturing India Pvt. Ltd.</li>
-            <li>
-              Scope of Certification: Manufacture & Supply of Heavy Fabricated
-              Parts
-            </li>
-            <li>Certificate Number: MS: 65160621-1</li>
-            <li>Date of Certification: 11 June 2024</li>
-            <li>Date of Last Issue: 11 August 2025</li>
-            <li>Issued By: M/S OSS Certification Services Pvt. Ltd.</li>
-            <li>Accreditation: JAS-ANZ & IAF</li>
+            <li>Certification Standard: EN 15085-2</li>
+            <li>Classification Level: CL2</li>
+            <li>Type of Activity: P</li>
+            <li>Certified by: TÜV Rheinland Industrie Service GmbH</li>
+            <li>Certificate Validity: 24-10-2024 to 27-10-2028</li>
+            <li>Manufacturing Location: Pune, Maharashtra, India</li>
           </ul>
 
-          <button
+          <p class="text-gray-800 leading-relaxed mb-6 font-semibold">
+            This certification reinforces WOPEX’s capability to deliver
+            safety-critical railway structures and assemblies compliant with
+            international railway standards.
+          </p>
+
+          <a
+            href="/components/certification.html"
             class="px-6 py-3 bg-[#0A1E3A] text-white rounded-lg shadow hover:bg-[#CD000D] transition font-semibold"
           >
             View More Certification
-          </button>
+          </a>
         </div>
 
         <!-- RIGHT: PORTRAIT CERTIFICATE -->
@@ -695,7 +700,7 @@
 
             <!-- Certificate Image -->
             <img
-              src="img/certificate1.png"
+              src="../img/certificate2.png"
               class="relative w-72 md:w-80 lg:w-96 object-cover rounded-xl"
               alt="Certificate"
             />
@@ -703,7 +708,6 @@
         </div>
       </div>
     </section>
-
     <!-- CONTACT -->
     <section id="contact" class="py-16 bg-[#071426] text-slate-200">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -719,10 +723,7 @@
               lead-time guidance and next steps.
             </p>
 
-            <form
-              id="contactForm"
-              class="mt-6 space-y-4"
-            >
+            <form id="contactForm" class="mt-6 space-y-4">
               <div class="grid sm:grid-cols-2 gap-4">
                 <input
                   required
@@ -848,5 +849,3 @@
     <app-footer></app-footer>
   </body>
 </html>
-
-
