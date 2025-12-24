@@ -12,7 +12,7 @@ class NavbarComponent extends HTMLElement {
         const basePath = isComponentPage ? '../' : './';
         
         this.innerHTML = `
-            <header class="sticky top-0 z-50 bg-white/70 glass border-b border-slate-200">
+            <header class="sticky top-0 z-50 bg-white glass border-b border-slate-200">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
                     <div class="flex items-center justify-between h-16">
                         <!-- LOGO -->
