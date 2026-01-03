@@ -26,92 +26,127 @@
 
   <body class="bg-gray-100 min-h-screen">
     <app-navbar></app-navbar>
-    <div class="flex items-center justify-center py-4">
-      <div
-        class="w-full max-w-4xl bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-6"
-      >
-        <!-- Heading -->
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">
-          Contact & Enquiries
-        </h1>
-        <p class="text-gray-600 mb-6">
-          Share your project brief and we will respond with capacity, lead-time
-          guidance and next steps.
-        </p>
 
-        <!-- Form -->
-        <form class="space-y-6">
-          <!-- Row 1 -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              placeholder="Full name"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900"
-            />
-
-            <input
-              type="text"
-              placeholder="Company"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900"
-            />
-          </div>
-
-          <!-- Row 2 -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-              type="email"
-              placeholder="Email"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900"
-            />
-          </div>
-
-          <!-- Industry -->
-          <select
-            class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+    <section id="contact" class="py-16 bg-white text-slate-200">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div
+            class="lg:col-span-2 p-6 bg-gray-50 rounded-lg border border-slate-200 shadow-sm"
           >
-            <option value="">-- Select Industry --</option>
-            <option>Manufacturing</option>
-            <option>IT Services</option>
-            <option>Healthcare</option>
-            <option>Retail</option>
-            <option>Other</option>
-          </select>
-
-          <!-- Message -->
-          <textarea
-            rows="5"
-            placeholder="Short project description, quantities, delivery expectations"
-            class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none"
-          ></textarea>
-
-          <!-- Footer -->
-          <div class="flex flex-col md:flex-row md:items-center gap-4">
-            <button
-              type="submit"
-              class="bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition"
-            >
-              Send enquiry
-            </button>
-
-            <p class="text-gray-600 text-sm">
-              Or email
-              <a
-                href="mailto:info@wopex.in"
-                class="text-gray-900 font-medium underline"
-                >info@wopex.in</a
-              >
+            <h2 class="text-3xl font-extrabold text-slate-700">
+              Contact & Enquiries
+            </h2>
+            <p class="mt-2 text-sm text-slate-400">
+              Share your project brief and we will respond with capacity,
+              lead-time guidance and next steps.
             </p>
+
+            <form id="contactForm" class="mt-6 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input
+                  required
+                  class="px-4 py-3 border border-slate-200 rounded-md text-sm w-full bg-gray-100"
+                  placeholder="First name"
+                  name="fname"
+                />
+                <input
+                  class="px-4 py-3 border border-slate-200 rounded-md text-sm w-full bg-gray-100"
+                  placeholder="Last name"
+                  name="lname"
+                />
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input
+                  required
+                  type="email"
+                  class="px-4 py-3 border border-slate-200 rounded-md text-sm w-full bg-gray-100"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="px-4 py-3 border border-slate-200 rounded-md text-sm w-full bg-gray-100"
+                  placeholder="Phone"
+                  name="phone"
+                />
+              </div>
+              <div>
+                <textarea
+                  required
+                  name="brief"
+                  rows="4"
+                  class="w-full border border-slate-200 rounded-md px-4 py-3 text-sm bg-gray-100"
+                  placeholder="Short project description, quantities, delivery expectations"
+                ></textarea>
+              </div>
+              <div class="flex items-center gap-3">
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="inline-flex items-center gap-2 rounded-md bg-[#CD000D] text-[#fff] px-6 py-3 text-sm font-medium hover:bg-red-700 transition disabled:opacity-50"
+                >
+                  Send enquiry
+                </button>
+                <a
+                  href="mailto:info@wopex.in"
+                  class="text-sm text-slate-400 hover:underline hover:text-[#fff]"
+                  >Or email info@wopex.in</a
+                >
+              </div>
+              <div id="formMessage" class="text-sm text-slate-300 hidden"></div>
+            </form>
           </div>
-        </form>
+
+          <aside
+            class="p-6 bg-gray-50 rounded-lg border border-slate-200 shadow-sm"
+          >
+            <h4 class="font-semibold text-slate-700">Locations</h4>
+            <div class="mt-3 text-sm text-slate-400">
+              <div class="font-medium text-slate-600">Manufacturing</div>
+              <div class="mt-1">
+                PAP V 157-1, Chakan Industrial Area, Phase II, Village Bhamboli,
+                Tal-Khed, Dist-Pune 410501, Maharashtra, India
+              </div>
+
+              <div class="mt-4 font-medium text-slate-600">Office</div>
+              <div class="mt-1">
+                Flat No. 102, Plot No. 31, Anand Vihar, Vidya Vihar Colony,
+                Talegaon, Pune 410507
+              </div>
+
+              <div class="mt-4">
+                <div class="text-sm">
+                  <strong>Phone:</strong> +91 96651 04024
+                </div>
+                <div class="text-sm mt-1">
+                  <strong>Email:</strong> info@wopex.in
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <h5 class="text-sm font-semibold text-slate-700">
+                Certifications
+              </h5>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full"
+                  >ISO 9001:2015</span
+                >
+                <span
+                  class="text-xs px-3 py-1 bg-amber-50 text-amber-700 rounded-full"
+                  >EN 15085-2 CL1</span
+                >
+                <span
+                  class="text-xs px-3 py-1 bg-violet-50 text-violet-700 rounded-full"
+                  >TÜV Rheinland</span
+                >
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-    
+    </section>
+
     <app-footer></app-footer>
   </body>
 </html>
